@@ -139,3 +139,94 @@ console.log(lodash.isEqual(str1, str2), "STRING CHECK");
 const num1 = 10;
 const num2 = 10;
 console.log(lodash.isEqual(num1, num2), "number comparison");
+
+const numArray = [
+  1, 2, 3, 4, 5, 6, 7, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10,
+];
+
+const filtered = lodash.uniq(numArray);
+console.log("filtered", filtered);
+
+const strArray = ["ram", "suraj", "radha", "rohan"];
+console.log(lodash.includes(strArray, "ram"));
+
+let arr1s = ["mango", "apple", "orange"];
+let arr2s = ["orange", "banana", "cucumber"];
+let diff = lodash.difference(arr2s, arr1s);
+console.log("new_difference_array", diff);
+
+const intersectionArray = lodash.intersection(arr1s, arr2s);
+console.log("intersectionArray", intersectionArray);
+
+const object1 = {
+  name: "raju",
+  age: 24,
+  nestedObj: {
+    name: "shyam",
+    age: 34,
+    anotherNestedObj: {
+      name: "Raju",
+      age: 54,
+    },
+  },
+};
+
+const object2 = {
+  name: "raju",
+  age: 24,
+  nestedObj: {
+    name: "shyam",
+    age: 34,
+    anotherNestedObj: {
+      name: "Raju",
+      age: 54,
+    },
+  },
+};
+
+console.log("check equality", lodash.isEqual(object1, object2));
+console.log();
+
+//JSON.stringify comparison
+
+let nameObj1 = {
+  name: "rahul",
+  age: 24,
+};
+const nameObj2 = {
+  age: 24,
+  name: "rahul",
+};
+console.log(
+  "JSON.stringify comparison",
+  JSON.stringify(nameObj1) === JSON.stringify(nameObj2)
+);
+
+//isEmpty method
+const emp_obj = {};
+console.log("emp_obj", lodash.isEmpty(emp_obj));
+const not_emp_obj = {
+  name: "raju",
+};
+console.log("not_empty_check", lodash.isEmpty(not_emp_obj));
+const empty_arr = [];
+console.log("empty_arr", lodash.isEmpty(empty_arr));
+empty_arr.push(3, 4, 5);
+console.log("not_empty_arr", lodash.isEmpty(empty_arr));
+const nullval = null;
+console.log("nullval", lodash.isEmpty(nullval));
+var something;
+console.log("something", lodash.isEmpty(something));
+
+const arrq1 = [1, 2];
+const arrq2 = [2, -5, 7, 8, 10, 1];
+const arrq3 = [-1, 2, 3, 4, 5, 1];
+const arrq4 = [9, 10, 11, 12, 13, 14, 1, 2];
+console.log(
+  "unique value identified",
+  lodash.union(arrq1, arrq2, arrq3, arrq4)
+);
+console.log(
+  "unique value intersection",
+  lodash.intersection(arrq1, arrq2, arrq3, arrq4)
+);
