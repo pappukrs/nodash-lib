@@ -316,10 +316,10 @@ const objC1 = {
   joiningDate: new Date(),
 };
 
-// const objC2 = lodash.clone(objC1);
+const objC2 = lodash.clone(objC1);
 // const objC2 = Object.assign({}, objC1);
 // const objC2 = { ...objC1 };
-const objC2 = JSON.parse(JSON.stringify(objC1));
+// const objC2 = JSON.parse(JSON.stringify(objC1));
 console.log(lodash.isEqual(objC1, objC2));
 
 objC2.name = "pramodh";
@@ -335,3 +335,20 @@ const clonearrOBJ = lodash.clone(arrOBJ);
 arrOBJ[0].name = "suraj";
 console.log("arrOBJ", arrOBJ);
 console.log("clonearrOBJ", clonearrOBJ);
+
+// defer
+
+// const msg = (n) => {
+//   console.log(n);
+// };
+// lodash.defer(msg, "hello");
+
+// lodash.times(10, () => console.log("ki"));
+//lodash.defer stop function calling inside until current call stack get empty
+const stamp = (n) => {
+  console.log("n", n);
+  console.log("lodash.now()", lodash.now());
+  console.log(lodash.now() - n);
+};
+lodash.defer(stamp, lodash.now());
+console.log("difference b/w time");
