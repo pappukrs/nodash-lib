@@ -345,10 +345,57 @@ console.log("clonearrOBJ", clonearrOBJ);
 
 // lodash.times(10, () => console.log("ki"));
 //lodash.defer stop function calling inside until current call stack get empty
-const stamp = (n) => {
-  console.log("n", n);
-  console.log("lodash.now()", lodash.now());
-  console.log(lodash.now() - n);
-};
-lodash.defer(stamp, lodash.now());
-console.log("difference b/w time");
+// const stamp = (n) => {
+//   console.log("n", n);
+//   console.log("lodash.now()", lodash.now());
+//   console.log(lodash.now() - n);
+// };
+// lodash.defer(stamp, lodash.now());
+// console.log("difference b/w time");
+
+//some strings methods
+//lodash.camelCase remove all the special characters and finally make a camelcase letter with digit if included
+// console.log(
+//   lodash.camelCase("___12345&^%#FOOD_6789BLO$#$&&%$*$($$$($GGGER_HAI")
+// );
+
+// console.log(lodash.capitalize("____66666$%$$yahiooo^^%%$$&%%&&9772299"));
+
+// console.log(lodash.clamp(-109, -5, 100), "clamp");
+
+// The _.inRange() method takes a number, and checks to see if it is between given start and end parameters. If the end is not specified, then it is set equals to the start, and then start is set equals 0. If the start is greater than the end the parameters are swapped to support negative ranges.
+console.log(lodash.inRange(10, 8, 17), "rangeCheck");
+console.log(lodash.inRange(2, 3, 5), "rangeCheck");
+
+console.log(lodash.inRange(-5, -5, -1), "inRangeChecked");
+console.log(lodash.random(5, 1, true), "randomNumber");
+console.log(lodash.random(1.2), "randomCheckrd");
+
+var objects = [{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }];
+
+// const sum = lodash.sumBy(objects, (o) => {
+//   return o.n;
+// });
+const sum = lodash.sumBy(objects, "n");
+console.log(sum, "sum");
+console.log(lodash.sum([2, 3, 5, 7]));
+console.log(lodash.subtract(7, 3));
+console.log(lodash.round(7.876, 1));
+console.log(lodash.multiply(8, 9));
+console.log(lodash.round(lodash.divide(11, 9), 3));
+
+console.log(lodash.min([4, 2, 5, 8, -9]));
+console.log(lodash.max([4, 2, 5, 8, -9]));
+console.log(lodash.minBy(objects, "n"));
+console.log(lodash.maxBy(objects, "n"));
+console.log(lodash.sumBy(objects, "n"));
+console.log(lodash.mean([8, 6, 4, 9]));
+console.log(lodash.meanBy(objects, "n"));
+
+function some() {
+  this.a = 5;
+  this.b = 6;
+}
+some.prototype.c = 6;
+console.log(lodash.values(new some()));
+console.log(lodash.values("hihello"));
