@@ -203,30 +203,98 @@ console.log(
 );
 
 //isEmpty method
-const emp_obj = {};
-console.log("emp_obj", lodash.isEmpty(emp_obj));
-const not_emp_obj = {
-  name: "raju",
-};
-console.log("not_empty_check", lodash.isEmpty(not_emp_obj));
-const empty_arr = [];
-console.log("empty_arr", lodash.isEmpty(empty_arr));
-empty_arr.push(3, 4, 5);
-console.log("not_empty_arr", lodash.isEmpty(empty_arr));
-const nullval = null;
-console.log("nullval", lodash.isEmpty(nullval));
-var something;
-console.log("something", lodash.isEmpty(something));
+// const emp_obj = {};
+// console.log("emp_obj", lodash.isEmpty(emp_obj));
+// const not_emp_obj = {
+//   name: "raju",
+// };
+// console.log("not_empty_check", lodash.isEmpty(not_emp_obj));
+// const empty_arr = [];
+// console.log("empty_arr", lodash.isEmpty(empty_arr));
+// empty_arr.push(3, 4, 5);
+// console.log("not_empty_arr", lodash.isEmpty(empty_arr));
+// const nullval = null;
+// console.log("nullval", lodash.isEmpty(nullval));
+// var something;
+// console.log("something", lodash.isEmpty(something));
 
-const arrq1 = [1, 2];
-const arrq2 = [2, -5, 7, 8, 10, 1];
-const arrq3 = [-1, 2, 3, 4, 5, 1];
-const arrq4 = [9, 10, 11, 12, 13, 14, 1, 2];
-console.log(
-  "unique value identified",
-  lodash.union(arrq1, arrq2, arrq3, arrq4)
-);
-console.log(
-  "unique value intersection",
-  lodash.intersection(arrq1, arrq2, arrq3, arrq4)
-);
+// const arrq1 = [1, 2];
+// const arrq2 = [2, -5, 7, 8, 10, 1];
+// const arrq3 = [-1, 2, 3, 4, 5, 1];
+// const arrq4 = [9, 10, 11, 12, 13, 14, 1, 2];
+// console.log(
+//   "unique value identified",
+//   lodash.union(arrq1, arrq2, arrq3, arrq4)
+// );
+// console.log(
+//   "unique value intersection",
+//   lodash.intersection(arrq1, arrq2, arrq3, arrq4)
+// );
+
+const milliseconds = lodash.now();
+const now = new Date(milliseconds);
+
+// now.toLocaleString() 11/4/2023, 11:56:49 am
+console.log("toLocaleString", now.toLocaleString());
+
+//now.toLocaleDateString()  11/4/2023
+console.log("toLocaleDateString", now.toLocaleDateString());
+
+//now.toDateString()
+console.log("toDateString", now.toDateString());
+
+//now.toTimeString()
+console.log("toTimeString", now.toTimeString());
+
+//now.tolocaleTimeString
+console.log("tolocaleTimeString", now.toLocaleTimeString());
+
+//now.toISOString
+console.log("toISOString", now.toISOString());
+
+//now.toJSON
+console.log("toJSON", now.toJSON());
+
+//now.toString
+console.log("toString", now.toString());
+
+//now.toUTCString()
+console.log("toUTCString", now.toUTCString());
+
+console.log("MM DD", now.toString("MMM dd"));
+
+console.log("MMM DD", now.toString("MMM dd"));
+
+console.log("getHours", now.getHours());
+console.log("getMinutes", now.getMinutes());
+console.log("getSeconds", now.getSeconds());
+console.log("toDateString()", now.toDateString());
+console.log("getTime()", now.getTime());
+console.log("getFullYear", now.getFullYear());
+console.log("getMonth", now.getMonth());
+
+const dayName = (n) => {
+  console.log(typeof n);
+  console.log(n, "n");
+  switch (n) {
+    case 1:
+      return "Mon";
+      break;
+    case 2:
+      return "Tue";
+    case 3:
+      return "Wed";
+    case 4:
+      return "Thur";
+    case 5:
+      return "Fri";
+    case 6:
+      return "Sat";
+
+    default:
+      return "Sun";
+    // break;
+  }
+};
+
+console.log("getDay", dayName(+now.getDay()));
