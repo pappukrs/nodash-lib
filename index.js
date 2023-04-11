@@ -112,95 +112,95 @@ const lodash = require("lodash");
 
 // console.log("res", res);
 
-var users = [
-  { name: "John", age: 30 },
-  { name: "Jane", age: 28 },
-  { name: "Bill", age: 65 },
-  { name: "Emily", age: 17 },
-  { name: "Jack", age: 30 },
-];
+// var users = [
+//   { name: "John", age: 30 },
+//   { name: "Jane", age: 28 },
+//   { name: "Bill", age: 65 },
+//   { name: "Emily", age: 17 },
+//   { name: "Jack", age: 30 },
+// ];
 
-lodash.reduce(users, (res, ele) => {}, {});
+// lodash.reduce(users, (res, ele) => {}, {});
 
-const obj1 = {};
-const obj2 = {};
-console.log(lodash.isEqual(obj1, obj2));
+// const obj1 = {};
+// const obj2 = {};
+// console.log(lodash.isEqual(obj1, obj2));
 
-const arr1 = [2, 3, 4, 5, 6, 7, 8];
-const arr2 = [4, 5, 6, 7, 8, 9, 10];
-// console.log(arr1 === arr2, "arraycomprison");
+// const arr1 = [2, 3, 4, 5, 6, 7, 8];
+// const arr2 = [4, 5, 6, 7, 8, 9, 10];
+// // console.log(arr1 === arr2, "arraycomprison");
 
-console.log(lodash.isEqual(arr1, arr2), "arraycomprison");
+// console.log(lodash.isEqual(arr1, arr2), "arraycomprison");
 
-const str1 = "suresh is a farmer";
-const str2 = "suresh is a farmer";
-console.log(lodash.isEqual(str1, str2), "STRING CHECK");
+// const str1 = "suresh is a farmer";
+// const str2 = "suresh is a farmer";
+// console.log(lodash.isEqual(str1, str2), "STRING CHECK");
 
-const num1 = 10;
-const num2 = 10;
-console.log(lodash.isEqual(num1, num2), "number comparison");
+// const num1 = 10;
+// const num2 = 10;
+// console.log(lodash.isEqual(num1, num2), "number comparison");
 
-const numArray = [
-  1, 2, 3, 4, 5, 6, 7, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10,
-];
+// const numArray = [
+//   1, 2, 3, 4, 5, 6, 7, 8, 8, 8, 8, 9, 9, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10,
+// ];
 
-const filtered = lodash.uniq(numArray);
-console.log("filtered", filtered);
+// const filtered = lodash.uniq(numArray);
+// console.log("filtered", filtered);
 
-const strArray = ["ram", "suraj", "radha", "rohan"];
-console.log(lodash.includes(strArray, "ram"));
+// const strArray = ["ram", "suraj", "radha", "rohan"];
+// console.log(lodash.includes(strArray, "ram"));
 
-let arr1s = ["mango", "apple", "orange"];
-let arr2s = ["orange", "banana", "cucumber"];
-let diff = lodash.difference(arr2s, arr1s);
-console.log("new_difference_array", diff);
+// let arr1s = ["mango", "apple", "orange"];
+// let arr2s = ["orange", "banana", "cucumber"];
+// let diff = lodash.difference(arr2s, arr1s);
+// console.log("new_difference_array", diff);
 
-const intersectionArray = lodash.intersection(arr1s, arr2s);
-console.log("intersectionArray", intersectionArray);
+// const intersectionArray = lodash.intersection(arr1s, arr2s);
+// console.log("intersectionArray", intersectionArray);
 
-const object1 = {
-  name: "raju",
-  age: 24,
-  nestedObj: {
-    name: "shyam",
-    age: 34,
-    anotherNestedObj: {
-      name: "Raju",
-      age: 54,
-    },
-  },
-};
+// const object1 = {
+//   name: "raju",
+//   age: 24,
+//   nestedObj: {
+//     name: "shyam",
+//     age: 34,
+//     anotherNestedObj: {
+//       name: "Raju",
+//       age: 54,
+//     },
+//   },
+// };
 
-const object2 = {
-  name: "raju",
-  age: 24,
-  nestedObj: {
-    name: "shyam",
-    age: 34,
-    anotherNestedObj: {
-      name: "Raju",
-      age: 54,
-    },
-  },
-};
+// const object2 = {
+//   name: "raju",
+//   age: 24,
+//   nestedObj: {
+//     name: "shyam",
+//     age: 34,
+//     anotherNestedObj: {
+//       name: "Raju",
+//       age: 54,
+//     },
+//   },
+// };
 
-console.log("check equality", lodash.isEqual(object1, object2));
-console.log();
+// console.log("check equality", lodash.isEqual(object1, object2));
+// console.log();
 
-//JSON.stringify comparison
+// //JSON.stringify comparison
 
-let nameObj1 = {
-  name: "rahul",
-  age: 24,
-};
-const nameObj2 = {
-  age: 24,
-  name: "rahul",
-};
-console.log(
-  "JSON.stringify comparison",
-  JSON.stringify(nameObj1) === JSON.stringify(nameObj2)
-);
+// let nameObj1 = {
+//   name: "rahul",
+//   age: 24,
+// };
+// const nameObj2 = {
+//   age: 24,
+//   name: "rahul",
+// };
+// console.log(
+//   "JSON.stringify comparison",
+//   JSON.stringify(nameObj1) === JSON.stringify(nameObj2)
+// );
 
 //isEmpty method
 // const emp_obj = {};
@@ -231,70 +231,107 @@ console.log(
 //   lodash.intersection(arrq1, arrq2, arrq3, arrq4)
 // );
 
-const milliseconds = lodash.now();
-const now = new Date(milliseconds);
+// const milliseconds = lodash.now();
+// const now = new Date(milliseconds);
 
-// now.toLocaleString() 11/4/2023, 11:56:49 am
-console.log("toLocaleString", now.toLocaleString());
+// // now.toLocaleString() 11/4/2023, 11:56:49 am
+// console.log("toLocaleString", now.toLocaleString());
 
-//now.toLocaleDateString()  11/4/2023
-console.log("toLocaleDateString", now.toLocaleDateString());
+// //now.toLocaleDateString()  11/4/2023
+// console.log("toLocaleDateString", now.toLocaleDateString());
 
-//now.toDateString()
-console.log("toDateString", now.toDateString());
+// //now.toDateString()
+// console.log("toDateString", now.toDateString());
 
-//now.toTimeString()
-console.log("toTimeString", now.toTimeString());
+// //now.toTimeString()
+// console.log("toTimeString", now.toTimeString());
 
-//now.tolocaleTimeString
-console.log("tolocaleTimeString", now.toLocaleTimeString());
+// //now.tolocaleTimeString
+// console.log("tolocaleTimeString", now.toLocaleTimeString());
 
-//now.toISOString
-console.log("toISOString", now.toISOString());
+// //now.toISOString
+// console.log("toISOString", now.toISOString());
 
-//now.toJSON
-console.log("toJSON", now.toJSON());
+// //now.toJSON
+// console.log("toJSON", now.toJSON());
 
-//now.toString
-console.log("toString", now.toString());
+// //now.toString
+// console.log("toString", now.toString());
 
-//now.toUTCString()
-console.log("toUTCString", now.toUTCString());
+// //now.toUTCString()
+// console.log("toUTCString", now.toUTCString());
 
-console.log("MM DD", now.toString("MMM dd"));
+// console.log("MM DD", now.toString("MMM dd"));
 
-console.log("MMM DD", now.toString("MMM dd"));
+// console.log("MMM DD", now.toString("MMM dd"));
 
-console.log("getHours", now.getHours());
-console.log("getMinutes", now.getMinutes());
-console.log("getSeconds", now.getSeconds());
-console.log("toDateString()", now.toDateString());
-console.log("getTime()", now.getTime());
-console.log("getFullYear", now.getFullYear());
-console.log("getMonth", now.getMonth());
+// console.log("getHours", now.getHours());
+// console.log("getMinutes", now.getMinutes());
+// console.log("getSeconds", now.getSeconds());
+// console.log("toDateString()", now.toDateString());
+// console.log("getTime()", now.getTime());
+// console.log("getFullYear", now.getFullYear());
+// //now.getMonth gives month less than 1
+// console.log("getMonth", now.getMonth() + 1);
 
-const dayName = (n) => {
-  console.log(typeof n);
-  console.log(n, "n");
-  switch (n) {
-    case 1:
-      return "Mon";
-      break;
-    case 2:
-      return "Tue";
-    case 3:
-      return "Wed";
-    case 4:
-      return "Thur";
-    case 5:
-      return "Fri";
-    case 6:
-      return "Sat";
+// const dayName = (n) => {
+//   console.log(typeof n);
+//   console.log(n, "n");
+//   switch (n) {
+//     case 1:
+//       return "Mon";
+//       break;
+//     case 2:
+//       return "Tue";
+//     case 3:
+//       return "Wed";
+//     case 4:
+//       return "Thur";
+//     case 5:
+//       return "Fri";
+//     case 6:
+//       return "Sat";
 
-    default:
-      return "Sun";
-    // break;
-  }
+//     default:
+//       return "Sun";
+//     // break;
+//   }
+// };
+
+// console.log("getDay", dayName(+now.getDay()));
+
+// const split = lodash.chunk([1, 2, 3, 4], 3);
+// console.log("split", split);
+
+const objC1 = {
+  name: "pappu",
+  age: 24,
+  address: {
+    state: "Bihar",
+    city: "patna",
+  },
+  getAge() {
+    return 24;
+  },
+  joiningDate: new Date(),
 };
 
-console.log("getDay", dayName(+now.getDay()));
+// const objC2 = lodash.clone(objC1);
+// const objC2 = Object.assign({}, objC1);
+// const objC2 = { ...objC1 };
+const objC2 = JSON.parse(JSON.stringify(objC1));
+console.log(lodash.isEqual(objC1, objC2));
+
+objC2.name = "pramodh";
+objC2.address.state = "karnatka";
+console.log("objC1", objC1);
+console.log("objC2", objC2);
+
+const arrOBJ = [
+  { name: "raj", age: 24 },
+  { name: "Rupesh", age: 35 },
+];
+const clonearrOBJ = lodash.clone(arrOBJ);
+arrOBJ[0].name = "suraj";
+console.log("arrOBJ", arrOBJ);
+console.log("clonearrOBJ", clonearrOBJ);
