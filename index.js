@@ -442,54 +442,67 @@ const lodash = require("lodash");
 // console.log(lodash_newObj, "lodash_newObj");
 // console.log(objects1, "objects1");
 
-function foo() {
-  this.a = 10;
-  this.p = 20;
-  this.getAge = () => {
-    return 20;
-  };
-}
-foo.prototype.joiningDate = new Date();
-function soo() {
-  this.k = 10;
-  this.d = 30;
-  this.getAddress = () => {
-    return "pune";
-  };
-}
-soo.prototype.salary = "145k";
-soo.prototype.bonus = "30k";
+// function foo() {
+//   this.a = 10;
+//   this.p = 20;
+//   this.getAge = () => {
+//     return 20;
+//   };
+// }
+// foo.prototype.joiningDate = new Date();
+// function soo() {
+//   this.k = 10;
+//   this.d = 30;
+//   this.getAddress = () => {
+//     return "pune";
+//   };
+// }
+// soo.prototype.salary = "145k";
+// soo.prototype.bonus = "30k";
 
-const newObjectIn = lodash.assignIn({ name: "pappu" }, new foo(), new soo());
-console.log("newObjectIn", newObjectIn);
+// const newObjectIn = lodash.assignIn({ name: "pappu" }, new foo(), new soo());
+// console.log("newObjectIn", newObjectIn);
 
 //lodash.at
-var object = { a: [{ b: { c: 3 } }, 4, { d: { b: { s: { f: 4 } } } }] };
-console.log(lodash.at(object, ["a[0].b.c", "a[1]", "a[2].d.b.s.f"]));
+// var object = { a: [{ b: { c: 3 } }, 4, { d: { b: { s: { f: 4 } } } }] };
+// console.log(lodash.at(object, ["a[0].b.c", "a[1]", "a[2].d.b.s.f"]));
 
-function Shape() {
-  this.x = 0;
-  this.y = 0;
-}
-function Circle() {
-  Shape.call(this);
-}
+// function Shape() {
+//   this.x = 0;
+//   this.y = 0;
+// }
+// function Circle() {
+//   Shape.call(this);
+// }
 
-Circle.prototype = lodash.create(Shape.prototype, {
-  constructor: Circle,
-});
-console.log("Shape", new Shape());
-console.log("Circle", new Circle());
+// Circle.prototype = lodash.create(Shape.prototype, {
+//   constructor: Circle,
+// });
+// console.log("Shape", new Shape());
+// console.log("Circle", new Circle());
 
 //lodash.defaults take destination objects which have some default value and source object
 
-const newObj = lodash.defaults(
-  { a: { c: 5, b: 20 }, b: 1 },
-  { a: { b: 24, c: 30, d: 5 }, b: 20 }
-);
-console.log("newObj", newObj);
-const newObjs = lodash.defaultsDeep(
-  { a: { c: 5, b: 20 }, b: 1 },
-  { a: { b: 24, c: 30, d: 5 }, b: 20 }
-);
-console.log("newObjs", newObjs);
+// const newObj = lodash.defaults(
+//   { a: { c: 5, b: 20 }, b: 1 },
+//   { a: { b: 24, c: 30, d: 5 }, b: 20 }
+// );
+// console.log("newObj", newObj);
+// const newObjs = lodash.defaultsDeep(
+//   { a: { c: 5, b: 20 }, b: 1 },
+//   { a: { b: 24, c: 30, d: 5 }, b: 20 }
+// );
+// console.log("newObjs", newObjs);
+// var users = {
+//   barney: { age: 36, active: true },
+//   fred: { age: 40, active: false },
+//   pebbles: { age: 1, active: true },
+// };
+
+// const filteredUsers = lodash.findKey(users, (ele) => ele.age == 1);
+// const filteredUsers = lodash.findKey(users, { age: 40, active: false });
+// const filteredUsers = lodash.findKey(users, ["active", false]);
+// const filteredUsers = lodash.findLastKey(users, ["active", true]);
+// const filteredUsers = lodash.findLastKey(users, { active: true });
+
+// console.log("filteredUsers", filteredUsers);
