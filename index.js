@@ -399,45 +399,66 @@ const lodash = require("lodash");
 // some.prototype.c = 6;
 // console.log(lodash.values(new some()));
 // console.log(lodash.values("hihello"));
-const objects2 = { b: 35, c: 20 };
-const objects1 = {
-  a: 10,
-  b: 20,
-  getSum() {
-    return 10;
-  },
-  c: {
-    d: 400,
-  },
-  joingDate: new Date(),
-};
-function newSome() {
-  (this.k = 10), (this.p = 0);
+// const objects2 = { b: 35, c: 20 };
+// const objects1 = {
+//   a: 10,
+//   b: 20,
+//   getSum() {
+//     return 10;
+//   },
+//   c: {
+//     d: 400,
+//   },
+//   joingDate: new Date(),
+// };
+// function newSome() {
+//   (this.k = 10), (this.p = 0);
+// }
+// newSome.prototype.v = 05;
+
+// const objects3 = { c: 30, d: 50 };
+
+// const newObj = Object.assign(
+//   { z: 500 },
+//   objects2,
+//   objects3,
+//   objects1,
+//   new newSome()
+// );
+// console.log("newObj", newObj);
+// const lodash_newObj = lodash.assign(
+//   { z: 500 },
+//   objects2,
+//   objects3,
+//   objects1,
+//   new newSome()
+// );
+// console.log("lodash_newObj", lodash_newObj);
+// newObj.c.d = 100;
+// // lodash_newObj.c.d = 204;
+
+// console.log("after");
+// console.log(newObj);
+// console.log(lodash_newObj, "lodash_newObj");
+// console.log(objects1, "objects1");
+
+function foo() {
+  this.a = 10;
+  this.p = 20;
+  this.getAge = () => {
+    return 20;
+  };
 }
-newSome.prototype.v = 05;
+foo.prototype.joiningDate = new Date();
+function soo() {
+  this.k = 10;
+  this.d = 30;
+  this.getAddress = () => {
+    return "pune";
+  };
+}
+soo.prototype.salary = "145k";
+soo.prototype.bonus = "30k";
 
-const objects3 = { c: 30, d: 50 };
-
-const newObj = Object.assign(
-  { z: 500 },
-  objects2,
-  objects3,
-  objects1,
-  new newSome()
-);
-console.log("newObj", newObj);
-const lodash_newObj = lodash.assign(
-  { z: 500 },
-  objects2,
-  objects3,
-  objects1,
-  new newSome()
-);
-console.log("lodash_newObj", lodash_newObj);
-newObj.c.d = 100;
-// lodash_newObj.c.d = 204;
-
-console.log("after");
-console.log(newObj);
-console.log(lodash_newObj, "lodash_newObj");
-console.log(objects1, "objects1");
+const newObjectIn = lodash.assignIn({ name: "pappu" }, new foo(), new soo());
+console.log("newObjectIn", newObjectIn);
