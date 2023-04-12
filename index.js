@@ -506,3 +506,26 @@ const lodash = require("lodash");
 // const filteredUsers = lodash.findLastKey(users, { active: true });
 
 // console.log("filteredUsers", filteredUsers);
+
+function foo() {
+  this.a = 10;
+  this.b = 10;
+  this.c = 30;
+  this.d = 40;
+}
+foo.prototype.e = 50;
+foo.prototype.f = 20;
+lodash.forIn(new foo(), (value, key) => {
+  console.log(value);
+});
+console.log("print from last in case forInRight");
+lodash.forInRight(new foo(), (value, key) => {
+  console.log(value);
+});
+console.log("forOwn");
+lodash.forOwn(new foo(), (value, key) => {
+  console.log(value);
+});
+lodash.forOwnRight(new foo(), (value, key) => {
+  console.log(key);
+});
