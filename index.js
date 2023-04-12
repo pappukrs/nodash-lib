@@ -462,3 +462,21 @@ soo.prototype.bonus = "30k";
 
 const newObjectIn = lodash.assignIn({ name: "pappu" }, new foo(), new soo());
 console.log("newObjectIn", newObjectIn);
+
+//lodash.at
+var object = { a: [{ b: { c: 3 } }, 4, { d: { b: { s: { f: 4 } } } }] };
+console.log(lodash.at(object, ["a[0].b.c", "a[1]", "a[2].d.b.s.f"]));
+
+function Shape() {
+  this.x = 0;
+  this.y = 0;
+}
+function Circle() {
+  Shape.call(this);
+}
+
+Circle.prototype = lodash.create(Shape.prototype, {
+  constructor: Circle,
+});
+console.log("Shape", new Shape());
+console.log("Circle", new Circle());
