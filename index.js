@@ -551,9 +551,21 @@ const lodash = require("lodash");
 // console.log(lodash.get(object, ["a", "0", "b", "c"]));
 // console.log(lodash.get(object, ["a", "1"], "6"));
 
-const object = { a: { b: 2 } };
-const other = lodash.create({ a: lodash.create({ b: 2 }) });
-console.log("object", object);
-console.log("other", other);
-console.log(lodash.has(object, ["a", "b"]));
-console.log(lodash.hasIn(other, "a"));
+// const object = { a: { b: 2 } };
+// const other = lodash.create({ a: lodash.create({ b: 2 }) });
+// console.log("object", object);
+// console.log("other", other);
+// console.log(lodash.has(object, ["a", "b"]));
+// console.log(lodash.hasIn(other, "a"));
+
+// const obj = { a: 1, b: 2, c: 3 };
+// console.log(lodash.invert(obj));
+// const obj1 = { a: { b: { c: 3 }, d: { e: 5 } }, f: { g: 7 }, k: 8 };
+// console.log(lodash.invert(obj1));
+
+const obj = { a: 1, b: 2, c: 1, d: 4 };
+console.log(
+  lodash.invertBy(obj, (val) => {
+    return "Group" + val;
+  })
+);
