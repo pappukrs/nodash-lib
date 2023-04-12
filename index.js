@@ -529,3 +529,24 @@ lodash.forOwn(new foo(), (value, key) => {
 lodash.forOwnRight(new foo(), (value, key) => {
   console.log(key);
 });
+
+function Foo() {
+  this.a = lodash.constant("a");
+  this.b = lodash.constant("b");
+  this.c = lodash.constant("c");
+}
+Foo.prototype.d = lodash.constant("d");
+
+lodash.forIn(new Foo(), (value, key) => {
+  console.log(key, value);
+});
+console.log(lodash.functions(new Foo()));
+console.log(lodash.functionsIn(new Foo()));
+
+var object = { a: [{ b: { c: 3 } }] };
+
+//lodash.get find on that path if value is not present then return default value
+
+console.log(lodash.get(object, "a[0].b.c"));
+console.log(lodash.get(object, ["a", "0", "b", "c"]));
+console.log(lodash.get(object, ["a", "1"], "6"));
