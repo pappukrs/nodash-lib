@@ -483,5 +483,13 @@ console.log("Circle", new Circle());
 
 //lodash.defaults take destination objects which have some default value and source object
 
-const newObj = lodash.defaults({ a: 1, b: 1 }, { a: 20, b: 20 });
+const newObj = lodash.defaults(
+  { a: { c: 5, b: 20 }, b: 1 },
+  { a: { b: 24, c: 30, d: 5 }, b: 20 }
+);
 console.log("newObj", newObj);
+const newObjs = lodash.defaultsDeep(
+  { a: { c: 5, b: 20 }, b: 1 },
+  { a: { b: 24, c: 30, d: 5 }, b: 20 }
+);
+console.log("newObjs", newObjs);
