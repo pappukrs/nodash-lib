@@ -303,38 +303,38 @@ const lodash = require("lodash");
 // const split = lodash.chunk([1, 2, 3, 4], 3);
 // console.log("split", split);
 
-const objC1 = {
-  name: "pappu",
-  age: 24,
-  address: {
-    state: "Bihar",
-    city: "patna",
-  },
-  getAge() {
-    return 24;
-  },
-  joiningDate: new Date(),
-};
+// const objC1 = {
+//   name: "pappu",
+//   age: 24,
+//   address: {
+//     state: "Bihar",
+//     city: "patna",
+//   },
+//   getAge() {
+//     return 24;
+//   },
+//   joiningDate: new Date(),
+// };
 
-const objC2 = lodash.clone(objC1);
+// const objC2 = lodash.clone(objC1);
 // const objC2 = Object.assign({}, objC1);
 // const objC2 = { ...objC1 };
 // const objC2 = JSON.parse(JSON.stringify(objC1));
-console.log(lodash.isEqual(objC1, objC2));
+// console.log(lodash.isEqual(objC1, objC2));
 
-objC2.name = "pramodh";
-objC2.address.state = "karnatka";
-console.log("objC1", objC1);
-console.log("objC2", objC2);
+// objC2.name = "pramodh";
+// objC2.address.state = "karnatka";
+// console.log("objC1", objC1);
+// console.log("objC2", objC2);
 
-const arrOBJ = [
-  { name: "raj", age: 24 },
-  { name: "Rupesh", age: 35 },
-];
-const clonearrOBJ = lodash.clone(arrOBJ);
-arrOBJ[0].name = "suraj";
-console.log("arrOBJ", arrOBJ);
-console.log("clonearrOBJ", clonearrOBJ);
+// const arrOBJ = [
+//   { name: "raj", age: 24 },
+//   { name: "Rupesh", age: 35 },
+// ];
+// const clonearrOBJ = lodash.clone(arrOBJ);
+// arrOBJ[0].name = "suraj";
+// console.log("arrOBJ", arrOBJ);
+// console.log("clonearrOBJ", clonearrOBJ);
 
 // defer
 
@@ -364,38 +364,80 @@ console.log("clonearrOBJ", clonearrOBJ);
 // console.log(lodash.clamp(-109, -5, 100), "clamp");
 
 // The _.inRange() method takes a number, and checks to see if it is between given start and end parameters. If the end is not specified, then it is set equals to the start, and then start is set equals 0. If the start is greater than the end the parameters are swapped to support negative ranges.
-console.log(lodash.inRange(10, 8, 17), "rangeCheck");
-console.log(lodash.inRange(2, 3, 5), "rangeCheck");
+// console.log(lodash.inRange(10, 8, 17), "rangeCheck");
+// console.log(lodash.inRange(2, 3, 5), "rangeCheck");
 
-console.log(lodash.inRange(-5, -5, -1), "inRangeChecked");
-console.log(lodash.random(5, 1, true), "randomNumber");
-console.log(lodash.random(1.2), "randomCheckrd");
+// console.log(lodash.inRange(-5, -5, -1), "inRangeChecked");
+// console.log(lodash.random(5, 1, true), "randomNumber");
+// console.log(lodash.random(1.2), "randomCheckrd");
 
-var objects = [{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }];
+// var objects = [{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }];
 
 // const sum = lodash.sumBy(objects, (o) => {
 //   return o.n;
 // });
-const sum = lodash.sumBy(objects, "n");
-console.log(sum, "sum");
-console.log(lodash.sum([2, 3, 5, 7]));
-console.log(lodash.subtract(7, 3));
-console.log(lodash.round(7.876, 1));
-console.log(lodash.multiply(8, 9));
-console.log(lodash.round(lodash.divide(11, 9), 3));
+// const sum = lodash.sumBy(objects, "n");
+// console.log(sum, "sum");
+// console.log(lodash.sum([2, 3, 5, 7]));
+// console.log(lodash.subtract(7, 3));
+// console.log(lodash.round(7.876, 1));
+// console.log(lodash.multiply(8, 9));
+// console.log(lodash.round(lodash.divide(11, 9), 3));
 
-console.log(lodash.min([4, 2, 5, 8, -9]));
-console.log(lodash.max([4, 2, 5, 8, -9]));
-console.log(lodash.minBy(objects, "n"));
-console.log(lodash.maxBy(objects, "n"));
-console.log(lodash.sumBy(objects, "n"));
-console.log(lodash.mean([8, 6, 4, 9]));
-console.log(lodash.meanBy(objects, "n"));
+// console.log(lodash.min([4, 2, 5, 8, -9]));
+// console.log(lodash.max([4, 2, 5, 8, -9]));
+// console.log(lodash.minBy(objects, "n"));
+// console.log(lodash.maxBy(objects, "n"));
+// console.log(lodash.sumBy(objects, "n"));
+// console.log(lodash.mean([8, 6, 4, 9]));
+// console.log(lodash.meanBy(objects, "n"));
 
-function some() {
-  this.a = 5;
-  this.b = 6;
+// function some() {
+//   this.a = 5;
+//   this.b = 6;
+// }
+// some.prototype.c = 6;
+// console.log(lodash.values(new some()));
+// console.log(lodash.values("hihello"));
+const objects2 = { b: 35, c: 20 };
+const objects1 = {
+  a: 10,
+  b: 20,
+  getSum() {
+    return 10;
+  },
+  c: {
+    d: 400,
+  },
+  joingDate: new Date(),
+};
+function newSome() {
+  (this.k = 10), (this.p = 0);
 }
-some.prototype.c = 6;
-console.log(lodash.values(new some()));
-console.log(lodash.values("hihello"));
+newSome.prototype.v = 05;
+
+const objects3 = { c: 30, d: 50 };
+
+const newObj = Object.assign(
+  { z: 500 },
+  objects2,
+  objects3,
+  objects1,
+  new newSome()
+);
+console.log("newObj", newObj);
+const lodash_newObj = lodash.assign(
+  { z: 500 },
+  objects2,
+  objects3,
+  objects1,
+  new newSome()
+);
+console.log("lodash_newObj", lodash_newObj);
+newObj.c.d = 100;
+// lodash_newObj.c.d = 204;
+
+console.log("after");
+console.log(newObj);
+console.log(lodash_newObj, "lodash_newObj");
+console.log(objects1, "objects1");
