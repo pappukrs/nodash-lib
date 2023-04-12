@@ -563,9 +563,28 @@ const lodash = require("lodash");
 // const obj1 = { a: { b: { c: 3 }, d: { e: 5 } }, f: { g: 7 }, k: 8 };
 // console.log(lodash.invert(obj1));
 
-const obj = { a: 1, b: 2, c: 1, d: 4 };
-console.log(
-  lodash.invertBy(obj, (val) => {
-    return "Group" + val;
-  })
-);
+// const obj = { a: 1, b: 2, c: 1, d: 4 };
+// console.log(
+//   lodash.invertBy(obj, (val) => {
+//     return "Group" + val;
+//   })
+// );
+
+// Array.prototype.add = (arr) => {
+//   return "Applying array method";
+// };
+
+// var object = { a: [{ b: { c: [1, 2, 3, 4] } }] };
+// console.log(lodash.invoke(object, "a[0].b.c.add"));
+
+const obj = { a: 3, b: 4, c: 5 };
+
+console.log(lodash.keys(obj));
+console.log(lodash.keys("obj                  o"));
+
+function Foo() {
+  this.a = 1;
+  this.b = 2;
+}
+Foo.prototype.c = 3;
+console.log(lodash.keysIn(new Foo()));
