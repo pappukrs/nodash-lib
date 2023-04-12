@@ -507,46 +507,53 @@ const lodash = require("lodash");
 
 // console.log("filteredUsers", filteredUsers);
 
-function foo() {
-  this.a = 10;
-  this.b = 10;
-  this.c = 30;
-  this.d = 40;
-}
-foo.prototype.e = 50;
-foo.prototype.f = 20;
-lodash.forIn(new foo(), (value, key) => {
-  console.log(value);
-});
-console.log("print from last in case forInRight");
-lodash.forInRight(new foo(), (value, key) => {
-  console.log(value);
-});
-console.log("forOwn");
-lodash.forOwn(new foo(), (value, key) => {
-  console.log(value);
-});
-lodash.forOwnRight(new foo(), (value, key) => {
-  console.log(key);
-});
+// function foo() {
+//   this.a = 10;
+//   this.b = 10;
+//   this.c = 30;
+//   this.d = 40;
+// }
+// foo.prototype.e = 50;
+// foo.prototype.f = 20;
+// lodash.forIn(new foo(), (value, key) => {
+//   console.log(value);
+// });
+// console.log("print from last in case forInRight");
+// lodash.forInRight(new foo(), (value, key) => {
+//   console.log(value);
+// });
+// console.log("forOwn");
+// lodash.forOwn(new foo(), (value, key) => {
+//   console.log(value);
+// });
+// lodash.forOwnRight(new foo(), (value, key) => {
+//   console.log(key);
+// });
 
-function Foo() {
-  this.a = lodash.constant("a");
-  this.b = lodash.constant("b");
-  this.c = lodash.constant("c");
-}
-Foo.prototype.d = lodash.constant("d");
+// function Foo() {
+//   this.a = lodash.constant("a");
+//   this.b = lodash.constant("b");
+//   this.c = lodash.constant("c");
+// }
+// Foo.prototype.d = lodash.constant("d");
 
-lodash.forIn(new Foo(), (value, key) => {
-  console.log(key, value);
-});
-console.log(lodash.functions(new Foo()));
-console.log(lodash.functionsIn(new Foo()));
+// lodash.forIn(new Foo(), (value, key) => {
+//   console.log(key, value);
+// });
+// console.log(lodash.functions(new Foo()));
+// console.log(lodash.functionsIn(new Foo()));
 
-var object = { a: [{ b: { c: 3 } }] };
+// var object = { a: [{ b: { c: 3 } }] };
 
 //lodash.get find on that path if value is not present then return default value
 
-console.log(lodash.get(object, "a[0].b.c"));
-console.log(lodash.get(object, ["a", "0", "b", "c"]));
-console.log(lodash.get(object, ["a", "1"], "6"));
+// console.log(lodash.get(object, "a[0].b.c"));
+// console.log(lodash.get(object, ["a", "0", "b", "c"]));
+// console.log(lodash.get(object, ["a", "1"], "6"));
+
+const object = { a: { b: 2 } };
+const other = lodash.create({ a: lodash.create({ b: 2 }) });
+console.log("object", object);
+console.log("other", other);
+console.log(lodash.has(object, ["a", "b"]));
+console.log(lodash.hasIn(other, "a"));
