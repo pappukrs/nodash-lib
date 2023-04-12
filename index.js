@@ -480,3 +480,8 @@ Circle.prototype = lodash.create(Shape.prototype, {
 });
 console.log("Shape", new Shape());
 console.log("Circle", new Circle());
+
+//lodash.defaults take destination objects which have some default value and source object
+
+const newObj = lodash.defaults({ a: 1, b: 1 }, { a: 20, b: 20 });
+console.log("newObj", newObj);
