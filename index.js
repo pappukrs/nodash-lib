@@ -589,42 +589,85 @@ const lodash = require("lodash");
 // Foo.prototype.c = 3;
 // console.log(lodash.keysIn(new Foo()));
 
-const obj = {
-  a: 2,
-  b: 5,
-  c: 50,
-};
+// const obj = {
+//   a: 2,
+//   b: 5,
+//   c: 50,
+// };
+// console.log(
+//   lodash.mapKeys(obj, (val, key) => {
+//     return key + "some";
+//   })
+// );
+// console.log(
+//   lodash.mapValues(obj, (val, key) => {
+//     return val + 10;
+//   })
+// );
+// const object = { a: { age: 24, sex: "male" }, b: { age: 30, sex: "female" } };
+// console.log(
+//   lodash.mapValues(object, (obj) => {
+//     return obj.sex;
+//   })
+// );
+
+// const someFunc = (a, b, c) => {
+//   return { "[a, b, c]": a + b + c };
+// };
+// const curriedFunc = lodash.curry(someFunc);
+// console.log(curriedFunc(1)(2)(3));
+// console.log(curriedFunc(1)(5)(3));
+
+// //castArray
+// console.log(lodash.castArray(2, 3));
+// console.log(lodash.castArray([1, 2, 3, 4, "hi"]));
+// console.log(lodash.castArray({ name: "pappu" }));
+// console.log(lodash.castArray("abc"));
+// console.log(lodash.castArray(null));
+// console.log(lodash.castArray(undefined));
+
+// const numArr = [1, 2, 3, 4, 5];
+// console.log(lodash.castArray(numArr) === numArr);
+
+// const obj1 = [{ a: 1 }, { b: 2 }];
+// const cloneObj1 = lodash.clone(obj1);
+// console.log(obj1[0] == cloneObj1[0]);
+// const cloneObj2 = lodash.cloneDeep(obj1);
+// console.log(cloneObj2[0] == obj1[0]);
+
+const obj = { a: 1, b: 2 };
+const other = { a: 1, b: 2 };
+console.log(lodash.eq(obj, obj));
+console.log(lodash.eq("a", "a"));
+console.log(lodash.eq("b", Object("b")));
+
+console.log(lodash.gt(3, 3));
+console.log(lodash.gte(3, -2));
+console.log(lodash.isArguments([3, 4, 5, 6]));
 console.log(
-  lodash.mapKeys(obj, (val, key) => {
-    return key + "some";
+  lodash.isArguments(
+    (function () {
+      return arguments;
+    })()
+  )
+);
+
+console.log(
+  lodash.isArguments(function () {
+    return arguments;
   })
 );
 console.log(
-  lodash.mapValues(obj, (val, key) => {
-    return val + 10;
-  })
+  lodash.isArguments(
+    (function () {
+      return arguments;
+    })()
+  )
 );
-const object = { a: { age: 24, sex: "male" }, b: { age: 30, sex: "female" } };
-console.log(
-  lodash.mapValues(object, (obj) => {
-    return obj.sex;
-  })
-);
-
-const someFunc = (a, b, c) => {
-  return { "[a, b, c]": a + b + c };
-};
-const curriedFunc = lodash.curry(someFunc);
-console.log(curriedFunc(1)(2)(3));
-console.log(curriedFunc(1)(5)(3));
-
-//castArray
-console.log(lodash.castArray(2, 3));
-console.log(lodash.castArray([1, 2, 3, 4, "hi"]));
-console.log(lodash.castArray({ name: "pappu" }));
-console.log(lodash.castArray("abc"));
-console.log(lodash.castArray(null));
-console.log(lodash.castArray(undefined));
-
-const numArr = [1, 2, 3, 4, 5];
-console.log(lodash.castArray(numArr) === numArr);
+console.log(lodash.isArray([1, 2, 3]));
+console.log(lodash.isArray("abc"));
+console.log(lodash.isArray([1, 2, 3, 5]));
+// console.log(lodash.isArray(document.body.children));
+console.log(lodash.isArrayBuffer(new ArrayBuffer(2, 3, 4)), "buffer-check");
+console.log(lodash.isArrayBuffer(new Array(6)));
+console.log(lodash.isArrayBuffer(lodash.castArray(1)));
