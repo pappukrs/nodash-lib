@@ -577,14 +577,54 @@ const lodash = require("lodash");
 // var object = { a: [{ b: { c: [1, 2, 3, 4] } }] };
 // console.log(lodash.invoke(object, "a[0].b.c.add"));
 
-const obj = { a: 3, b: 4, c: 5 };
+// const obj = { a: 3, b: 4, c: 5 };
 
-console.log(lodash.keys(obj));
-console.log(lodash.keys("obj                  o"));
+// console.log(lodash.keys(obj));
+// console.log(lodash.keys("obj                  o"));
 
-function Foo() {
-  this.a = 1;
-  this.b = 2;
-}
-Foo.prototype.c = 3;
-console.log(lodash.keysIn(new Foo()));
+// function Foo() {
+//   this.a = 1;
+//   this.b = 2;
+// }
+// Foo.prototype.c = 3;
+// console.log(lodash.keysIn(new Foo()));
+
+const obj = {
+  a: 2,
+  b: 5,
+  c: 50,
+};
+console.log(
+  lodash.mapKeys(obj, (val, key) => {
+    return key + "some";
+  })
+);
+console.log(
+  lodash.mapValues(obj, (val, key) => {
+    return val + 10;
+  })
+);
+const object = { a: { age: 24, sex: "male" }, b: { age: 30, sex: "female" } };
+console.log(
+  lodash.mapValues(object, (obj) => {
+    return obj.sex;
+  })
+);
+
+const someFunc = (a, b, c) => {
+  return { "[a, b, c]": a + b + c };
+};
+const curriedFunc = lodash.curry(someFunc);
+console.log(curriedFunc(1)(2)(3));
+console.log(curriedFunc(1)(5)(3));
+
+//castArray
+console.log(lodash.castArray(2, 3));
+console.log(lodash.castArray([1, 2, 3, 4, "hi"]));
+console.log(lodash.castArray({ name: "pappu" }));
+console.log(lodash.castArray("abc"));
+console.log(lodash.castArray(null));
+console.log(lodash.castArray(undefined));
+
+const numArr = [1, 2, 3, 4, 5];
+console.log(lodash.castArray(numArr) === numArr);
