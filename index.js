@@ -612,7 +612,7 @@ const lodash = require("lodash");
 // );
 
 // const someFunc = (a, b, c) => {
-//   return { "[a, b, c]": a + b + c };
+//   return [a, b, c];
 // };
 // const curriedFunc = lodash.curry(someFunc);
 // console.log(curriedFunc(1)(2)(3));
@@ -635,49 +635,78 @@ const lodash = require("lodash");
 // const cloneObj2 = lodash.cloneDeep(obj1);
 // console.log(cloneObj2[0] == obj1[0]);
 
-const obj = { a: 1, b: 2 };
-const other = { a: 1, b: 2 };
-console.log(lodash.eq(obj, obj));
-console.log(lodash.eq("a", "a"));
-console.log(lodash.eq("b", Object("b")));
+// const obj = { a: 1, b: 2 };
+// const other = { a: 1, b: 2 };
+// console.log(lodash.eq(obj, obj));
+// console.log(lodash.eq("a", "a"));
+// console.log(lodash.eq("b", Object("b")));
 
-console.log(lodash.gt(3, 3));
-console.log(lodash.gte(3, -2));
-console.log(lodash.isArguments([3, 4, 5, 6]));
-console.log(
-  lodash.isArguments(
-    (function () {
-      return arguments;
-    })()
-  )
-);
+// console.log(lodash.gt(3, 3));
+// console.log(lodash.gte(3, -2));
+// console.log(lodash.isArguments([3, 4, 5, 6]));
+// console.log(
+//   lodash.isArguments(
+//     (function () {
+//       return arguments;
+//     })()
+//   )
+// );
 
-console.log(
-  lodash.isArguments(function () {
-    return arguments;
-  })
-);
-console.log(
-  lodash.isArguments(
-    (function () {
-      return arguments;
-    })()
-  )
-);
-console.log(lodash.isArray([1, 2, 3]));
-console.log(lodash.isArray("abc"));
-console.log(lodash.isArray([1, 2, 3, 5]));
-// console.log(lodash.isArray(document.body.children));
-console.log(lodash.isArrayBuffer(new ArrayBuffer(2, 3, 4)), "buffer-check");
-console.log(lodash.isArrayBuffer(new Array(6)));
-console.log(lodash.isArrayBuffer(lodash.castArray(1)));
-console.log(lodash.isArrayLike([1, 23, 3]));
-console.log(lodash.isArrayLike(1));
-console.log(lodash.isArrayLikeObject({ a: 1, b: 2 }));
-console.log(lodash.isArrayLikeObject([2, 3, 4]));
-console.log(lodash.isArrayLikeObject());
-console.log(lodash.isBoolean(false));
-console.log(lodash.isBoolean(true));
-console.log(lodash.isBoolean(3));
-console.log(lodash.isBoolean(0));
-console.log(lodash.isBoolean(-7));
+// console.log(
+//   lodash.isArguments(function () {
+//     return arguments;
+//   })
+// );
+// console.log(
+//   lodash.isArguments(
+//     (function () {
+//       return arguments;
+//     })()
+//   )
+// );
+// console.log(lodash.isArray([1, 2, 3]));
+// console.log(lodash.isArray("abc"));
+// console.log(lodash.isArray([1, 2, 3, 5]));
+// // console.log(lodash.isArray(document.body.children));
+// console.log(lodash.isArrayBuffer(new ArrayBuffer(2, 3, 4)), "buffer-check");
+// console.log(lodash.isArrayBuffer(new Array(6)));
+// console.log(lodash.isArrayBuffer(lodash.castArray(1)));
+// console.log(lodash.isArrayLike([1, 23, 3]));
+// console.log(lodash.isArrayLike(1));
+// console.log(lodash.isArrayLikeObject({ a: 1, b: 2 }));
+// console.log(lodash.isArrayLikeObject([2, 3, 4]));
+// console.log(lodash.isArrayLikeObject());
+// console.log(lodash.isBoolean(false));
+// console.log(lodash.isBoolean(true));
+// console.log(lodash.isBoolean(3));
+// console.log(lodash.isBoolean(0));
+// console.log(lodash.isBoolean(-7));
+// const date = new Date();
+// console.log(lodash.isDate(date));
+
+// const someFun = (a, b, c, d, e, f) => {
+//   return [a, b, c, d, e, f];
+// };
+
+// const curried = lodash.curry(someFun);
+// console.log("curried");
+// console.log(curried(1, 2, 3)(4, 5, 6));
+
+// function mha(a, b) {
+//   return [a, b];
+// }
+
+// var currieds = lodash.curry(mha);
+// console.log(curried(1)(2));
+
+// const someFunction = (a, b, c) => {
+//   return [a, b, c];
+// };
+// const curried = lodash.curry(someFunction);
+// console.log(curried(1)(2)(3));
+
+const sum = (a, b, c) => {
+  return a + b + c;
+};
+console.log(lodash.isFunction(sum));
+console.log(lodash.isFunction("abc"));
