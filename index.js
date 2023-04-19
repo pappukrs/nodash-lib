@@ -705,8 +705,35 @@ const lodash = require("lodash");
 // const curried = lodash.curry(someFunction);
 // console.log(curried(1)(2)(3));
 
-const sum = (a, b, c) => {
-  return a + b + c;
-};
-console.log(lodash.isFunction(sum));
-console.log(lodash.isFunction("abc"));
+// const sum = (a, b, c) => {
+//   return a + b + c;
+// };
+// console.log(lodash.isFunction(sum));
+// console.log(lodash.isFunction("abc"));
+
+// console.log(lodash.isInteger(4));
+// console.log(lodash.isInteger("abc"));
+// console.log(lodash.isInteger(Number.MIN_VALUE));
+// console.log(lodash.isInteger(Infinity));
+
+// console.log(lodash.toString(null));
+// console.log(lodash.toString());
+
+const arr = [6.9, 8.5, 7.6, 7.8, 6.5, 5.7, 5.4, 6.4];
+
+const res = lodash.countBy(arr, Math.floor);
+console.log("res", res);
+
+const arrWords = [
+  "one",
+  "two",
+  "three",
+  "four",
+  "five",
+  "six",
+  "seven",
+  "eight",
+  "nine",
+];
+const rest = lodash.countBy(arrWords, "length");
+console.log("rest", rest);
