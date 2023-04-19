@@ -719,21 +719,29 @@ const lodash = require("lodash");
 // console.log(lodash.toString(null));
 // console.log(lodash.toString());
 
-const arr = [6.9, 8.5, 7.6, 7.8, 6.5, 5.7, 5.4, 6.4];
+// const arr = [6.9, 8.5, 7.6, 7.8, 6.5, 5.7, 5.4, 6.4];
 
-const res = lodash.countBy(arr, Math.floor);
-console.log("res", res);
+// const res = lodash.countBy(arr, Math.floor);
+// console.log("res", res);
 
-const arrWords = [
-  "one",
-  "two",
-  "three",
-  "four",
-  "five",
-  "six",
-  "seven",
-  "eight",
-  "nine",
-];
-const rest = lodash.countBy(arrWords, "length");
-console.log("rest", rest);
+// const arrWords = [
+//   "one",
+//   "two",
+//   "three",
+//   "four",
+//   "five",
+//   "six",
+//   "seven",
+//   "eight",
+//   "nine",
+// ];
+// const rest = lodash.countBy(arrWords, "length");
+// console.log("rest", rest);
+
+const obj1 = [true, 8, null, "yes"];
+const obj2 = [true, 9, 10, "yes"];
+
+const rest1 = lodash.every(obj1, Boolean);
+const rest2 = lodash.every(obj2, Boolean);
+console.log("rest1", rest1);
+console.log("rest2", rest2);
