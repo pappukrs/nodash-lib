@@ -738,10 +738,40 @@ const lodash = require("lodash");
 // const rest = lodash.countBy(arrWords, "length");
 // console.log("rest", rest);
 
-const obj1 = [true, 8, null, "yes"];
-const obj2 = [true, 9, 10, "yes"];
+// const obj1 = [true, 8, null, "yes"];
+// const obj2 = [true, 9, 10, "yes"];
 
-const rest1 = lodash.every(obj1, Boolean);
-const rest2 = lodash.every(obj2, Boolean);
-console.log("rest1", rest1);
-console.log("rest2", rest2);
+// const rest1 = lodash.every(obj1, Boolean);
+// const rest2 = lodash.every(obj2, Boolean);
+// console.log("rest1", rest1);
+// console.log("rest2", rest2);
+
+var users = [
+  { user: "barney", age: 36, active: false },
+  { user: "fred", age: 40, active: false },
+];
+
+const res = lodash.every(users, { users: "barney", active: false });
+console.log("res", res);
+
+const res1 = lodash.every(users, { active: false });
+console.log("res", res1);
+
+const res2 = lodash.every(users, ["active", false]);
+console.log("res2", res2);
+
+var users = [
+  { user: "barney", age: 36, active: true },
+  { user: "fred", age: 40, active: false },
+  { user: "pebbles", age: 1, active: true },
+];
+
+const res3 = lodash.filter(users, function (obj) {
+  return obj.age > 35;
+});
+console.log("res3", res3);
+
+const res4 = lodash.find(users, function (obj) {
+  return obj.age > 35;
+});
+console.log("res4", res4);
